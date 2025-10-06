@@ -1,0 +1,22 @@
+{
+	"about": "Tenyo's Sings a Song",
+	"backdrop": "class.png",
+	"actors": [
+		{
+			"actor": [
+				2.0,
+				"tenyo",
+				0.0,
+				"dial_000"
+			]
+		},
+		{
+			"actor": [
+				4.0,
+				"izumi",
+				0.0,
+				"dial_2137"
+			]
+		}
+	]
+}

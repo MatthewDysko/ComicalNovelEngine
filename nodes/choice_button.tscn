@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8qh81ptr06g6"]
+
+[ext_resource type="Script" uid="uid://deyagxsjdrdb4" path="res://nodes/choice_button.gd" id="1_sshxp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sshxp"]
+bg_color = Color(0, 0, 0, 0.52156866)
+border_width_top = 24
+border_width_bottom = 24
+border_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g540s"]
+bg_color = Color(0, 0, 0, 0.7176471)
+border_width_top = 24
+border_width_bottom = 24
+border_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic68d"]
+bg_color = Color(0.2574758, 0.25747576, 0.25747573, 0.52156866)
+border_width_top = 24
+border_width_bottom = 24
+border_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+border_blend = true
+
+[node name="Button" type="Button"]
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_sshxp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g540s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ic68d")
+text = "Button 1"
+script = ExtResource("1_sshxp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

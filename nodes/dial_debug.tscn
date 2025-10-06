@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://68hmg5oj5tvf"]
+
+[ext_resource type="Script" uid="uid://docvj44gch6of" path="res://nodes/dial_debug.gd" id="1_20elq"]
+[ext_resource type="JSON" path="res://scenes/Classroom.json" id="2_70xop"]
+
+[node name="DialDebug" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_20elq")
+sceneJSON = ExtResource("2_70xop")
+
+[node name="Backdrop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

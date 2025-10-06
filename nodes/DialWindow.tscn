@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbm41gs2h4kbs"]
+
+[ext_resource type="Script" uid="uid://cwtyq57agx0tc" path="res://nodes/DialWindow.gd" id="1_xy84p"]
+[ext_resource type="JSON" path="res://scenes/dialogues/dial_000.json" id="2_v773l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lgfa"]
+bg_color = Color(0, 0, 0, 0.52156866)
+border_width_top = 24
+border_width_bottom = 24
+border_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+border_blend = true
+
+[node name="DialWindow" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xy84p")
+dialogueJSON = ExtResource("2_v773l")
+
+[node name="Actors" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 649.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6lgfa")

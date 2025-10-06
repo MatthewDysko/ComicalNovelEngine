@@ -1,0 +1,78 @@
+{
+	"0": [
+		{
+			"dial": "Whoo! Mm, yeah!",
+			"nametag": "tenyo",
+			"new_sprite": [
+				3.0,
+				"tenyo",
+				1.0
+			]
+		},
+		{
+			"dial": "Life's like a road that you travel on,\nWhen there's one day here and the next day gone!",
+			"nametag": "tenyo"
+		},
+		{
+			"dial": "When there's one day here and the next day gone!",
+			"nametag": "tenyo"
+		},
+		{
+			"dial": "...",
+			"nametag": "izumi",
+			"new_sprite": [
+				4.0,
+				"izumi",
+				3.0
+			],
+			"move_sprite": [
+				2.0,
+				"tenyo",
+				3.0
+			]
+		},
+		{
+			"dial": "Please ignore him.",
+			"move_sprite": [
+				4.0,
+				"izumi",
+				2.0
+			],
+			"nametag": "izumi"
+		},
+		{
+			"choices": [
+				{
+					"option": "Life is a highway-",
+					"result": "1"
+				},
+				{
+					"option": "tenyo sybau.",
+					"result": "2"
+				}
+			]
+		}
+	],
+	"1": [
+		{
+			"dial": "Life is a highway, and I wanna ride it all night long.",
+			"nametag": "tenyo",
+			"move_sprite": [
+				1.0,
+				"tenyo",
+				3.0
+			]
+		}
+	],
+	"2": [
+		{
+			"dial": "Shut your sybau ass up.",
+			"nametag": "katsuo",
+			"move_sprite": [
+				1.0,
+				"tenyo",
+				3.0
+			]
+		}
+	]
+}
