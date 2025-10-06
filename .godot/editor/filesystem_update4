@@ -1,0 +1,8 @@
+res://nodes/dial_debug.tscn
+res://nodes/choice_button.tscn
+res://nodes/phone.gd
+res://nodes/dial_debug.gd
+res://nodes/menu.tscn
+res://scripts/menu.gd
+res://nodes/menu.gd
+res://nodes/MenuButton.gd

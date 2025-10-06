@@ -4,6 +4,8 @@ var PreloadedDialoge : PackedScene = preload("res://nodes/DialWindow.tscn")
 
 @export var sceneJSON : JSON
 
+var menu_opened : bool = false
+
 var scene : Scene
 var actors : Array[Actor]
 

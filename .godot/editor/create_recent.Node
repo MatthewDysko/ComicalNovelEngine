@@ -1,0 +1,11 @@
+TextureRect
+Button
+VBoxContainer
+RichTextLabel
+ColorRect
+AnimationPlayer
+PanelContainer
+HBoxContainer
+Control
+AnimatedSprite2D
+Sprite2D
