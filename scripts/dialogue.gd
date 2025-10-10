@@ -4,8 +4,8 @@ class_name Dialogue
 var current_step = 0
 var steps : Array = []
 
-func _init(dialogueJSON : JSON, subset : String):
-	for step : Dictionary in dialogueJSON.data[subset]:
+func _init(dialogueJSON : JSON, path : String):
+	for step : Dictionary in dialogueJSON.data[path]:
 		if step.has("choices"):
 			steps.append(DialChoiceStep.new(step))
 		else:

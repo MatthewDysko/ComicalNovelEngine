@@ -1,100 +1,115 @@
 extends Control
 class_name DialWindow
 
-
 @export var dialogueJSON : JSON
 
-var PreloadedDialText = preload("res://nodes/dial_text.tscn")
-var PreloadedDialChoice = preload("res://nodes/dial_choice_step_window.tscn")
 var PreloadedActor = preload("res://nodes/actor.tscn")
+var PreloadedOptions = preload("res://nodes/options.tscn")
 
+var step : DialStep
 var dialogue : Dialogue
-
-var current_dial_text : DialText
-var finished_showing_dial_text = false
+var is_selecting_option = false
+var is_fading = false
 
 func _ready():
-	get_parent().hide_actors()
 	dialogue = Dialogue.new(dialogueJSON,"0")
-	next()
+	
+	get_parent().hide_actors()
+	show_dial_window()
+	await get_tree().create_timer(0.5).timeout
+	
+	show_next_step()
+
+func change_dialogue_path(new_path : String):
+	dialogue = Dialogue.new(dialogueJSON,new_path)
+	show_next_step()
 
 func _input(event):
-	if event.is_action_pressed("NextDialStep"):
-		if finished_showing_dial_text:
-			finished_showing_dial_text = false
-			next()
-		else:
-			current_dial_text.show_all_text()
-			finished_showing_dial_text = true
+	if event.is_action_pressed("NextStep") and !Menu.is_opened and !is_selecting_option and !is_fading:
+		show_next_step()
 			
-
-func next():
+func show_next_step():
 	if dialogue.is_finished():
-		fade_out_dialogue()
+		hide_dial_winodw()
 		return
+
+	step = dialogue.get_next_step()	
 	
-	var step = dialogue.get_next_step()
-	if step is DialStep:
-		age_children()
+	if step is DialChoiceStep: 
+		show_option_window()
+	else: show_next_line()
+
+func format_nametag(nametag : String) -> String :
+	var new_nametag : String = ""
+	for word in nametag.split(" "):
+		new_nametag += "[b]" + word[0] + "[/b]"
+		new_nametag += word.trim_prefix(word[0]) + " "
+	new_nametag.trim_suffix(" ")
+	return new_nametag
+
+func show_dial_window():
+	dialogue = Dialogue.new(dialogueJSON,"0")
+	$AP.play("Show")
+	$Dial.text = ""
+	
+	var first_nametag : String
+	for _step : DialStep in dialogue.steps:
+		if _step.nametag != "":
+			first_nametag = _step.nametag
+			return
+	$Control/NameBox/MRG/Name.text = format_nametag(first_nametag)
+	
+func hide_dial_winodw():
+	$AP.play("Hide")
+	await get_tree().create_timer(0.75).timeout
+	get_parent().show_actors()
+	queue_free()
+	return
+	
+func show_option_window():
+	var options : Options = PreloadedOptions.instantiate()
+	options.choices = step.choices
+	add_child(options)
+	is_selecting_option = true
+	return
+	
+func show_next_line():
+	$Dial.show_text(step)
+	$Control/NameBox/MRG/Name.text = format_nametag(step.nametag)
+	
+	match step.effect:
+		DialStep.EFFECT.FADE_IN: create_tween().tween_property($ColorRect,"color:a",1,1)
+		DialStep.EFFECT.FADE_OUT: create_tween().tween_property($ColorRect,"color:a",0,1)
+		DialStep.EFFECT.NONE: pass
 		
-		move_any_actor(step)
-		spawn_new_actor(step)
+	for sprite_action : SpriteAction in step.sprite_actions:
+		match sprite_action.sprite_action:
+			SpriteAction.ACTION.CREATE: create_actor(sprite_action)
+			SpriteAction.ACTION.MODIFY: modify_existing_actor(sprite_action)
 
-		spawn_new_text(step)
-	
-	elif step is DialChoiceStep:
-		var dial_choice_window : DialChoiceWindow = PreloadedDialChoice.instantiate()
-		dial_choice_window.choices = step.choices
-		add_child(dial_choice_window)
-		var selected_choice : String = await dial_choice_window.choice_made
-		dial_choice_window.queue_free()
-		dialogue = Dialogue.new(dialogueJSON,selected_choice)
-		next()
-
-func move_any_actor(step : DialStep):
-	if step.move_sprite == null: return
-	for actor : Actor in $Actors.get_children():
-		if actor.sprite == step.move_sprite.sprite:
-			actor.change_pos(step.move_sprite.pos)
-			actor.change_subset(step.move_sprite.subset)
-
-func spawn_new_actor(step : DialStep):
-	if step.new_sprite == null: return
+func create_actor(sprite_action):
 	var actor : Actor = PreloadedActor.instantiate()
 	actor.big = true
-	actor.pos = step.new_sprite.pos
-	actor.sprite = step.new_sprite.sprite
-	actor.subset = step.new_sprite.subset
+	actor.id = sprite_action.actor_id
+	actor.pos = sprite_action.pos
+	actor.img = sprite_action.img
+	actor.img_sub = sprite_action.sub_img
 	$Actors.add_child(actor)
-		
-func spawn_new_text(step : DialStep):
-	current_dial_text = PreloadedDialText.instantiate()
-	current_dial_text.text = step.dial # 715.0
-	add_child(current_dial_text)
-	
-	var actor : Actor = get_actor(step)
-	if actor != null:
-		actor.speak()
-		await current_dial_text.finished_showing
-		get_actor(step).stop_speaking()
-		finished_showing_dial_text = true
 
-func age_children():
-	for child in get_children():
-		if child is DialText:
-			child.age()
-
-func fade_out_dialogue():
-	create_tween().tween_property(self,"modulate:a",0,0.15).set_trans(Tween.TRANS_CUBIC)
-	get_parent().show_actors()
-	await get_tree().create_timer(0.25).timeout
-	queue_free()
-
-func get_actor(step : DialStep):
+func modify_existing_actor(sprite_action):
 	for actor : Actor in $Actors.get_children():
-		if actor.sprite == step.nametag:
-			return actor
-	return null
-	
+		if actor.id == sprite_action.actor_id:
+			if sprite_action.img != "" : 
+				actor.img = sprite_action.img
+				actor.load_sprites()
+			if sprite_action.sub_img != -1: 
+				actor.img_sub = sprite_action.sub_img
+				actor.load_sprites()
+				actor.jump()
+			if sprite_action.pos != -1.0 : 
+				actor.change_pos(sprite_action.pos)
+
+func _on_button_pressed():
+	show_next_step()
 	
 	

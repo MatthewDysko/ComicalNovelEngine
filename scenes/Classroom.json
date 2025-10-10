@@ -3,20 +3,22 @@
 	"backdrop": "class.png",
 	"actors": [
 		{
-			"actor": [
-				2.0,
-				"tenyo",
-				0.0,
-				"dial_000"
-			]
+			"actor": {
+				"id" : "tenyo",
+				"img" : "tenyo.png",
+				"sub_img" : 0.0,
+				"position" : 2.0,
+				"dialogue" : "dial_000"
+			}
 		},
 		{
-			"actor": [
-				4.0,
-				"izumi",
-				0.0,
-				"dial_2137"
-			]
+			"actor": {
+				"id" : "tenyo",
+				"img" : "izumi.png",
+				"sub_img" : 0.0,
+				"position" : 4.0,
+				"dialogue" : "dial_0032320"
+			}
 		}
 	]
 }

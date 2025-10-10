@@ -1,0 +1,104 @@
+{
+	"class": [
+		{
+			"name": "Katsuo",
+			"short": "Katsuo",
+			"sprite": "katsuo"
+		},
+		{
+			"name": "Misako",
+			"short": "Misako",
+			"sprite": "misako"
+		},
+		{
+			"name": "Naomi",
+			"short": "Naomi",
+			"sprite": "naomi"
+		},
+		{
+			"name": "Shinji",
+			"short": "Shinji",
+			"sprite": "shinji"
+		},
+		{
+			"name": "Takako",
+			"short": "Takako",
+			"sprite": "takako"
+		},
+		{
+			"name": "Akika Hattori",
+			"short": "Akika",
+			"sprite": "akika"
+		},
+		{
+			"name": "Hirohito Kazama",
+			"short": "Hirohito",
+			"sprite": "hirohito"
+		},
+		{
+			"name": "Isami Kōya",
+			"short": "Koya",
+			"sprite": "koya"
+		},
+		{
+			"name": "Kenta Takahashi",
+			"short": "Kenta",
+			"sprite": "kenta"
+		},
+		{
+			"name": "Kento Kakimoto",
+			"short": "Kacpi",
+			"sprite": "kacpi"
+		},
+		{
+			"name": "Makoto Tenyo",
+			"short": "Tenyo",
+			"sprite": "tenyo"
+		},
+		{
+			"name": "Mao Mamoru",
+			"short": "Mao",
+			"sprite": "mao"
+		},
+		{
+			"name": "Megumi Kinoshita",
+			"short": "Megumi",
+			"sprite": "megumi"
+		},
+		{
+			"name": "Shunya Sakamoto",
+			"short": "Shunya",
+			"sprite": "shunya"
+		},
+		{
+			"name": "Taishi Hazama",
+			"short": "Hazama",
+			"sprite": "hazama"
+		},
+		{
+			"name": "Takeshi Kubawu",
+			"short": "Kubawu",
+			"sprite": "kubawu"
+		},
+		{
+			"name": "Takeshi Yusa",
+			"short": "Yusa",
+			"sprite": "yusa"
+		},
+		{
+			"name": "Umi Izumi",
+			"short": "Izumi",
+			"sprite": "akika"
+		},
+		{
+			"name": "Yamino",
+			"short": "Yamino",
+			"sprite": "yamino"
+		},
+		{
+			"name": "Yushun Takasaki",
+			"short": "Yushun",
+			"sprite": "yushun"
+		}
+	]
+}

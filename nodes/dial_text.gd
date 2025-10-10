@@ -1,5 +1,4 @@
 extends RichTextLabel
-class_name DialText
 
 signal finished_showing
 

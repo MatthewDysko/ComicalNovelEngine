@@ -39,3 +39,4 @@ func show_actors():
 	for actor : Actor in actors:
 		actor.enable_button()
 		create_tween().tween_property(actor,"modulate:a",1,0.25)
+		

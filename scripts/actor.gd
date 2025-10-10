@@ -4,9 +4,10 @@ class_name Actor
 # Number of Spaces availbe for Sprites 
 var screen_segments = 5
 
+var id = ""
 var pos = 1
-var sprite = "error"
-var subset = 0
+var img = "error"
+var img_sub = 0
 
 var dialogue = ""
 var big = false
@@ -32,8 +33,8 @@ func open_dialogue():
 	get_parent().open_dialogue(dialogue)
 
 func load_sprites():
-	atlas.atlas = load("res://assets/sprites/" + sprite + ".png")
-	atlas.region.position.x = 512*subset 
+	atlas.atlas = load("res://assets/sprites/" + img)
+	atlas.region.position.x = 512*img_sub 
 	atlas.region.size = Vector2(512,512)
 	$Sprite.texture = atlas
 	
@@ -56,29 +57,11 @@ func change_pos(_pos = 1.0):
 	create_tween().tween_property(self,"position:x",new_pos_x,0.5).set_trans(Tween.TRANS_CUBIC)
 
 func change_subset(_subset = 0):
-	if 512*_subset != atlas.region.position.x:
-		atlas.region.position.x = 512*_subset
-		jump()
+	img_sub = _subset
+	if 512*img_sub != atlas.region.position.x:
+		atlas.region.position.x = 512*img_sub
 		$Sprite.texture = atlas
-
-func speak():
-	speaking = true
-	start_speaking()
-
-func start_speaking():
-	if !speaking: return
-	atlas.region.position.y = 512
-	$Sprite.texture = atlas
-	await get_tree().create_timer(0.1).timeout
-	atlas.region.position.y = 0
-	$Sprite.texture = atlas
-	await get_tree().create_timer(0.1).timeout
-	start_speaking()
-
-func stop_speaking():
-	speaking = false
 	
-
 func jump():
 	var og_y_pos = $Sprite.position.y
 	create_tween().tween_property($Sprite,"position:y",og_y_pos-50,0.15).set_trans(Tween.TRANS_CUBIC)

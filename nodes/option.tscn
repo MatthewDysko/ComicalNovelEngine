@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd62dilmehm6s"]
+
+[ext_resource type="FontFile" uid="uid://bvpjmf44doa05" path="res://assets/Exo2-VariableFont_wght.ttf" id="1_lxdtn"]
+[ext_resource type="Script" uid="uid://4lln7250b6bq" path="res://nodes/option.gd" id="1_r2oxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0yrm"]
+bg_color = Color(0.8732984, 0.8732984, 0.8732984, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 48
+border_width_top = 48
+border_width_right = 48
+border_width_bottom = 49
+border_color = Color(0.5310511, 0.53105116, 0.5310509, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 20
+
+[sub_resource type="FontVariation" id="FontVariation_xscuj"]
+base_font = ExtResource("1_lxdtn")
+variation_embolden = 1.0
+
+[node name="Option" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0yrm")
+script = ExtResource("1_r2oxo")
+
+[node name="MRG" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="Option" type="RichTextLabel" parent="MRG"]
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.22490484, 0.22490484, 0.22490484, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = -7
+theme_override_constants/paragraph_separation = -7
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_xscuj")
+theme_override_font_sizes/normal_font_size = 48
+text = "Go with it.  qweqweqeqe"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MRG"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="MRG/Button" to="." method="_on_button_pressed"]

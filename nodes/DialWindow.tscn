@@ -1,14 +1,271 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbm41gs2h4kbs"]
+[gd_scene load_steps=20 format=3 uid="uid://cbm41gs2h4kbs"]
 
 [ext_resource type="Script" uid="uid://cwtyq57agx0tc" path="res://nodes/DialWindow.gd" id="1_xy84p"]
-[ext_resource type="JSON" path="res://scenes/dialogues/dial_000.json" id="2_v773l"]
+[ext_resource type="FontFile" uid="uid://cikxvu5pv7ug6" path="res://assets/Magazine-Cutouts-Font.ttf" id="2_dcmuf"]
+[ext_resource type="FontFile" uid="uid://crba542xitbt7" path="res://assets/Oswald-VariableFont_wght.ttf" id="2_xscuj"]
+[ext_resource type="FontFile" uid="uid://bvpjmf44doa05" path="res://assets/Exo2-VariableFont_wght.ttf" id="4_dcmuf"]
+[ext_resource type="Script" uid="uid://br2ahgxmrixg5" path="res://nodes/dial.gd" id="5_xscuj"]
+
+[sub_resource type="Gradient" id="Gradient_xscuj"]
+offsets = PackedFloat32Array(0.75, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.5686275)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_62t1u"]
+gradient = SubResource("Gradient_xscuj")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xscuj"]
+bg_color = Color(0.17821202, 0.17821205, 0.17821196, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 48
+border_width_top = 48
+border_width_right = 48
+border_width_bottom = 49
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lgfa"]
-bg_color = Color(0, 0, 0, 0.52156866)
-border_width_top = 24
-border_width_bottom = 24
-border_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+bg_color = Color(0.8732984, 0.8732984, 0.8732984, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 48
+border_width_top = 48
+border_width_right = 48
+border_width_bottom = 49
+border_color = Color(0.5310511, 0.53105116, 0.5310509, 1)
 border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 30
+
+[sub_resource type="FontVariation" id="FontVariation_62t1u"]
+base_font = ExtResource("2_xscuj")
+variation_embolden = 1.01
+variation_transform = Transform2D(1, 0.5, 0, 1, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62t1u"]
+bg_color = Color(0.18359089, 0.18359023, 0.18359041, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 48
+border_width_top = 48
+border_width_right = 48
+border_width_bottom = 49
+border_color = Color(0.09620472, 0.09620475, 0.09620469, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_v773l"]
+base_font = ExtResource("4_dcmuf")
+variation_embolden = 0.76
+variation_transform = Transform2D(1, 0.32, 0, 1, 0, 0)
+spacing_space = 6
+
+[sub_resource type="FontVariation" id="FontVariation_dcmuf"]
+base_font = ExtResource("2_dcmuf")
+variation_transform = Transform2D(1, 0.25, 0, 1, 0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_xscuj"]
+base_font = ExtResource("4_dcmuf")
+variation_embolden = 1.0
+
+[sub_resource type="Animation" id="Animation_wilyv"]
+resource_name = "Hide"
+length = 1.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BackBox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(152, 108), Vector2(120, 64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/NameBox:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(101, 29), Vector2(138, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 635)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(6, 364)]
+}
+
+[sub_resource type="Animation" id="Animation_62t1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BackBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 108)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/NameBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(101, 29)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 635)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xscuj"]
+resource_name = "Show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BackBox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(120, 64), Vector2(152, 108)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/NameBox:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(137, 63), Vector2(101, 29)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(0.225, 1),
+"update": 0,
+"values": [Vector2(-1742, 635), Vector2(0, 635)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l0yrm"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0yrm"]
+_data = {
+&"Hide": SubResource("Animation_wilyv"),
+&"RESET": SubResource("Animation_62t1u"),
+&"Show": SubResource("Animation_xscuj"),
+&"new_animation": SubResource("Animation_l0yrm")
+}
 
 [node name="DialWindow" type="Control"]
 top_level = true
@@ -16,10 +273,19 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 0.0009765625
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xy84p")
-dialogueJSON = ExtResource("2_v773l")
+
+[node name="Overlay" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_62t1u")
 
 [node name="Actors" type="Control" parent="."]
 layout_mode = 1
@@ -29,13 +295,141 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 649.0
-offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -864.0
+offset_top = 148.99951
+offset_right = 863.9995
+offset_bottom = 485.9995
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBox" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_top = 108.0
+offset_right = -86.0
+offset_bottom = -46.000122
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xscuj")
+
+[node name="FrontBox" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 65.0
+offset_right = -118.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6lgfa")
+
+[node name="FrontBoxText" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 120.00006
+offset_right = 1313.6437
+offset_bottom = 234.85992
+scale = Vector2(1.2207516, 1.0882827)
+theme_override_colors/default_color = Color(0, 0, 0, 0.17254902)
+theme_override_constants/line_separation = -9
+theme_override_constants/paragraph_separation = -20
+theme_override_fonts/normal_font = SubResource("FontVariation_62t1u")
+theme_override_font_sizes/normal_font_size = 118
+text = "DIALOGUE"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="NameBox" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -139.5
+offset_right = 469.0
+offset_bottom = -28.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62t1u")
+
+[node name="MRG" type="MarginContainer" parent="Control/NameBox"]
+layout_mode = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -35
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -35
+
+[node name="Name" type="RichTextLabel" parent="Control/NameBox/MRG"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.8862616, 0.88626146, 0.8862615, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -20
+theme_override_constants/paragraph_separation = -20
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_v773l")
+theme_override_fonts/bold_font = SubResource("FontVariation_dcmuf")
+theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/bold_font_size = 66
+bbcode_enabled = true
+text = "[b]N[/b]ame"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dial" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 555.0
+offset_top = 686.0
+offset_right = 1568.0
+offset_bottom = 891.0
+rotation = 0.0014199389
+theme_override_colors/default_color = Color(0.22490484, 0.22490484, 0.22490484, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = -7
+theme_override_constants/paragraph_separation = -7
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = SubResource("FontVariation_xscuj")
+theme_override_font_sizes/normal_font_size = 48
+text = "Life is a Highway !!! And I Wanna Ride it All NIGHT LONG1!!!!"
+vertical_alignment = 1
+script = ExtResource("5_xscuj")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AP" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l0yrm")
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

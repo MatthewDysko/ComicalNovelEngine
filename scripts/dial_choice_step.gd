@@ -1,4 +1,4 @@
-extends Node
+extends DialStep
 class_name DialChoiceStep
 
 var choices : Array[DialChoiceOption] = []

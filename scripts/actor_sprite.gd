@@ -1,11 +1,18 @@
 extends Node
-class_name ActorSprite
+class_name SpriteAction
 
-var pos : float
-var sprite : String
-var subset : int
+enum ACTION{CREATE, MODIFY}
 
-func _init(_pos : float , _sprite : String , _subset : int):
-	pos = _pos
-	sprite = _sprite
-	subset = _subset
+var sprite_action : ACTION
+var actor_id : String
+var img : String = ""
+var sub_img : int = -1
+var pos : float = -1.0
+
+func _init(
+		_sprite_action : String, 
+		_actor_id : String):
+	match _sprite_action:
+		"create": sprite_action = ACTION.CREATE
+		"modify": sprite_action = ACTION.MODIFY
+	actor_id = _actor_id

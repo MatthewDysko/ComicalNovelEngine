@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://b14by7p2hl328"]
+
+[ext_resource type="Script" uid="uid://oj1b1ag5t2ie" path="res://nodes/contact_button.gd" id="1_2hlvs"]
+[ext_resource type="FontFile" uid="uid://crba542xitbt7" path="res://assets/Oswald-VariableFont_wght.ttf" id="1_tjurs"]
+[ext_resource type="Texture2D" uid="uid://bygftmbmn1fmi" path="res://assets/sprites/pfps/tenyo.png" id="2_2hlvs"]
+[ext_resource type="FontFile" uid="uid://cikxvu5pv7ug6" path="res://assets/Magazine-Cutouts-Font.ttf" id="4_irvs5"]
+
+[sub_resource type="Gradient" id="Gradient_8hci8"]
+offsets = PackedFloat32Array(0, 0.53333336, 1)
+colors = PackedColorArray(1, 1, 1, 0.7019608, 1, 1, 1, 1, 1, 1, 1, 0.7019608)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_upn4g"]
+gradient = SubResource("Gradient_8hci8")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jday5"]
+texture = SubResource("GradientTexture2D_upn4g")
+
+[node name="Contact" type="MarginContainer"]
+offset_right = 596.0
+offset_bottom = 126.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+script = ExtResource("1_2hlvs")
+
+[node name="Button" type="Button" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(596, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_tjurs")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_jday5")
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -472.0
+offset_top = -251.0
+offset_right = 128.0
+offset_bottom = 349.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_2hlvs")
+expand_mode = 1
+
+[node name="Name" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.8346143, 0.8346143, 0.8346143, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_tjurs")
+theme_override_fonts/bold_font = ExtResource("4_irvs5")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[b]Makoto "
+fit_content = true

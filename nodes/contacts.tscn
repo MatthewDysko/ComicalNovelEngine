@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjhvbxww3k4l"]
+
+[ext_resource type="Script" uid="uid://ilmo174s7bu1" path="res://nodes/contacts.gd" id="1_vxnol"]
+[ext_resource type="JSON" path="res://scenes/contacts.json" id="2_fihab"]
+
+[node name="ContactPage" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -235.0
+offset_right = 369.0
+offset_bottom = 1910.9998
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxnol")
+contactsJSON = ExtResource("2_fihab")
