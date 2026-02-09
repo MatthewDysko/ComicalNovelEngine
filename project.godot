@@ -23,6 +23,7 @@ Menu="*res://scripts/menu.gd"
 
 window/size/viewport_width=1728
 window/size/viewport_height=972
+window/stretch/mode="viewport"
 
 [input]
 

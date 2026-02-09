@@ -8,6 +8,8 @@ func _init(dialogueJSON : JSON, path : String):
 	for step : Dictionary in dialogueJSON.data[path]:
 		if step.has("choices"):
 			steps.append(DialChoiceStep.new(step))
+		elif step.has("go_to"):
+			steps.append(DialGoToPath.new(step))
 		else:
 			steps.append(DialStep.new(step))
 	pass

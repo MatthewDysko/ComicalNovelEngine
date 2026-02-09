@@ -1,0 +1,15 @@
+{
+	"about": "Tenyo's Sings a Song",
+	"backdrop": "school.png",
+	"actors": [
+		{
+			"actor": {
+				"id": "shinji",
+				"img": "shinji.png",
+				"sub_img": 0.0,
+				"position": 3.0,
+				"dialogue": "dial_000"
+			}
+		}
+	]
+}

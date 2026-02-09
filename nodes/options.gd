@@ -44,6 +44,7 @@ func _ready():
 func confirm_option(_confirmed_option : Option):
 	var dialWindow : DialWindow = get_parent()
 	dialWindow.change_dialogue_path(_confirmed_option.result_dialogue)
+	await get_tree().create_timer(0.01).timeout
 	dialWindow.is_selecting_option = false
 	queue_free()
 	

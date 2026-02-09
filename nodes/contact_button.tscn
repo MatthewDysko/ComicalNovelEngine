@@ -1,20 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://b14by7p2hl328"]
+[gd_scene load_steps=6 format=3 uid="uid://b14by7p2hl328"]
 
 [ext_resource type="Script" uid="uid://oj1b1ag5t2ie" path="res://nodes/contact_button.gd" id="1_2hlvs"]
 [ext_resource type="FontFile" uid="uid://crba542xitbt7" path="res://assets/Oswald-VariableFont_wght.ttf" id="1_tjurs"]
 [ext_resource type="Texture2D" uid="uid://bygftmbmn1fmi" path="res://assets/sprites/pfps/tenyo.png" id="2_2hlvs"]
 [ext_resource type="FontFile" uid="uid://cikxvu5pv7ug6" path="res://assets/Magazine-Cutouts-Font.ttf" id="4_irvs5"]
 
-[sub_resource type="Gradient" id="Gradient_8hci8"]
-offsets = PackedFloat32Array(0, 0.53333336, 1)
-colors = PackedColorArray(1, 1, 1, 0.7019608, 1, 1, 1, 1, 1, 1, 1, 0.7019608)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_upn4g"]
-gradient = SubResource("Gradient_8hci8")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jday5"]
-texture = SubResource("GradientTexture2D_upn4g")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irvs5"]
+bg_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.4955094, 0.49550897, 0.4955091, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Contact" type="MarginContainer"]
 offset_right = 596.0
@@ -33,7 +35,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_tjurs")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxTexture_jday5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_irvs5")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
 layout_mode = 1

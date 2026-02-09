@@ -1,0 +1,91 @@
+{
+	"0": [{
+			"dial": "Whoo! Mm, yeah!",
+			"nametag": "???",
+			"effect": "fade_in"
+		},{
+			"dial": "HaHaha!",
+			"nametag": "Makoto Tenyo",
+			"effect": "fade_out",
+			"sprites": [
+				{
+					"action": "create",
+					"id": "tenyo",
+					"img": "tenyo.png",
+					"sub_img": 1.0,
+					"position": 3.0
+				}
+			]
+		},
+		{
+			"dial": "Life's like a road that you travel on, when there's one day here and the next day gone!",
+			"nametag": "Makoto Tenyo"
+		},
+		{
+			"dial": "When there's one day here and the next day gone!",
+			"nametag": "Makoto Tenyo"
+		},
+		{
+			"dial": "...",
+			"nametag": "Umi Izumi",
+			"sprites": [
+				{
+					"action": "create",
+					"id": "izumi",
+					"img": "izumi.png",
+					"sub_img": 3.0,
+					"position": 4.0
+				},
+				{
+					"action": "modify",
+					"id": "tenyo",
+					"img": "tenyo.png",
+					"sub_img": 3.0,
+					"position": 2.0
+				}
+			]
+		},
+		{
+			"dial": "Please ignore him...",
+			"nametag": "Umi Izumi",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "izumi",
+					"sub_img": 1.0,
+					"position": 3.0
+				},
+				{
+					"action": "modify",
+					"id": "tenyo",
+					"sub_img": 2.0,
+					"position": 1.0
+				}
+			]
+		},
+		{
+			"choices": [
+				{
+					"option": "Go with it.",
+					"result": "1"
+				},
+				{
+					"option": "sybau tenyo.",
+					"result": "2"
+				}
+			]
+		}
+	],
+	"1": [
+		{
+			"dial": "Option 1.",
+			"nametag": "katsuo"
+		}
+	],
+	"2": [
+		{
+			"dial": "Option 2.",
+			"nametag": "katsuo"
+		}
+	]
+}

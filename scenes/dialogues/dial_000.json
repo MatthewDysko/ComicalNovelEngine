@@ -1,100 +1,326 @@
 {
 	"0": [{
-			"dial": "Whoo! Mm, yeah!",
+			"dial": "Two boys stand in front of a school gate as they are about to go in, one of them stops the other and says:",
 			"nametag": "???",
 			"effect": "fade_in"
 		},{
-			"dial": "HaHaha!",
-			"nametag": "Makoto Tenyo",
+			"dial": "Okay... buddy...",
+			"nametag": "Shinji",
 			"effect": "fade_out",
 			"sprites": [
 				{
 					"action": "create",
-					"id": "tenyo",
-					"img": "tenyo.png",
-					"sub_img": 1.0,
-					"position": 3.0
-				}
-			]
-		},
-		{
-			"dial": "Life's like a road that you travel on, when there's one day here and the next day gone!",
-			"nametag": "Makoto Tenyo"
-		},
-		{
-			"dial": "When there's one day here and the next day gone!",
-			"nametag": "Makoto Tenyo"
-		},
-		{
-			"dial": "...",
-			"nametag": "Umi Izumi",
-			"sprites": [
-				{
-					"action": "create",
-					"id": "izumi",
-					"img": "izumi.png",
-					"sub_img": 3.0,
-					"position": 4.0
-				},
-				{
-					"action": "modify",
-					"id": "tenyo",
-					"img": "tenyo.png",
-					"sub_img": 3.0,
-					"position": 2.0
-				}
-			]
-		},
-		{
-			"dial": "Please ignore him...",
-			"nametag": "Umi Izumi",
-			"sprites": [
-				{
-					"action": "modify",
-					"id": "izumi",
-					"sub_img": 1.0,
-					"position": 3.0
-				},
-				{
-					"action": "modify",
-					"id": "tenyo",
+					"id": "shinji",
+					"img": "shinji.png",
 					"sub_img": 2.0,
-					"position": 1.0
+					"position": 3.0
 				}
 			]
-		},
-		{
+		},{
+			"dial": "Do you remember what I said?",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 1.0
+				}
+			]
+		},{
 			"choices": [
 				{
-					"option": "Go with it.",
+					"option": "No.",
 					"result": "1"
 				},
 				{
-					"option": "sybau tenyo.",
+					"option": "Yes (lie)",
 					"result": "2"
 				}
 			]
 		}
 	],
-	"1": [
-		{
-			"dial": "Option 1.",
-			"nametag": "katsuo"
+	"1": [{
+			"dial": "You said something said?",
+			"nametag": "katsuo",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
 		},{
-			"dial": "Option 1.",
-			"nametag": "katsuo"
+			"dial": "Where you even listening?",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+			
+		},{
+			"go_to": "3"
 		}
 	],
-	"2": [
-		{
-			"dial": "Option 2.",
+	"2": [{
+			"dial": "Uhh...?",
 			"nametag": "katsuo"
 		},{
-			"dial": "Option 2.",
-			"nametag": "katsuo"
+			"dial": "Switching guns is faster then reloading??",
+			"nametag": "katsuo",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
 		},{
-			"dial": "Option 2.",
-			"nametag": "katsuo"
+			"dial": "No. I mean, yeah. duh.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 1.0
+				}
+			]
+		},{
+			"dial": "Not what I meant.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"go_to": "3"
 		}
-	]
-}
+	],
+	"3":[{
+			"dial": "Izumi called me again. Me.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 0.0
+				}
+			]
+		},
+		{
+			"dial": "She's gonna meet ya at the game club after school for that thing you have.",
+			"nametag": "Shinji"
+		},
+		{
+			"dial": "But maaan...",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		}
+		,
+		{
+			"dial": "When are you gonna get yourself a cellphone?",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 0.0
+				}
+			]
+		},{
+			"choices": [
+				{
+					"option": "I already have one.",
+					"result": "4"
+				},
+				{
+					"option": "Why? I have you.",
+					"result": "5"
+				},
+				{
+					"option": "...",
+					"result": "6"
+				}
+			]
+		}
+	],
+	"4": [{
+			"dial": "That fuckin' cup on a string you made with Tenyo is not a cellphone.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+		},{
+			"dial": "Not by a long stretch.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"dial": "...",
+			"nametag": "katsuo"
+		},{
+			"dial": "String does - in fact - stretch pretty long.",
+			"nametag": "katsuo",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+		},{
+			"dial": "...",
+			"nametag": "Shinji"
+		},{
+			"dial": "What were we talking about?",
+			"nametag": "Shinji"
+		},{
+			"go_to": "6"
+		}
+	],
+	"5": [{
+			"dial": "Auch? I'm not some secretary that makes your schedule for you.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+		},{
+			"dial": "What about my 10 o'clock with the company shareholders? Is it still happening?.",
+			"nametag": "katsuo"
+		},{
+			"dial": " No. It was moved. Guys at wall street are all busy due to some irregularities with the stock market.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"dial": "...",
+			"nametag": "Shinji"
+		},{
+			"dial": "...",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+		},{
+			"dial": "I WILL NOT BE OBJECTIFIED!!!",
+			"nametag": "Shinji"
+		},{
+			"dial": "...",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"go_to": "6"
+		}
+	],
+	"6":[{
+			"dial": "You've been working a lot lately 'suo.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"dial": "You must have some savings.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 1.0
+				}
+			]
+		},{
+			"dial": "Unless - you lost it? Already?.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 3.0
+				}
+			]
+		},{
+			"dial": "Oh man...",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 2.0
+				}
+			]
+		},{
+			"dial": "Tell me at least you lost it honorably...",
+			"nametag": "Shinji"
+		},{
+			"dial": "Like at a Casino.",
+			"nametag": "Shinji"
+		},{
+			"dial": "Or a rocks to throw at Tenyo.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 1.0
+				}
+			]
+		},{
+			"dial": "Both highly respectable.",
+			"nametag": "Shinji",
+			"sprites": [
+				{
+					"action": "modify",
+					"id": "shinji",
+					"sub_img": 0.0
+				}
+			]
+		},{
+			"dial": "As the bell rings, the new security guard rushes Shinji and Katsuo to get inside the school, before he closes the gate..",
+			"nametag": "Narrator",
+			"effect": "fade_in"
+		}
+	] 
+}	

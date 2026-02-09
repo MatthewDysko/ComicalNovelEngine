@@ -37,6 +37,8 @@ func show_next_step():
 	
 	if step is DialChoiceStep: 
 		show_option_window()
+	elif step is DialGoToPath: 
+		change_dialogue_path(step.path_id)
 	else: show_next_line()
 
 func format_nametag(nametag : String) -> String :

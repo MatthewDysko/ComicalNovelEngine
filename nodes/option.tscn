@@ -53,6 +53,6 @@ vertical_alignment = 1
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MRG/Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MRG/Button" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="MRG/Button" to="." method="_on_button_pressed"]

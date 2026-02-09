@@ -8,7 +8,6 @@ var result_dialogue : String = ""
 func _ready():
 	modulate.a = 0;
 	create_tween().tween_property(self,"modulate:a",1,0.25).set_trans(Tween.TRANS_CUBIC)
-	
 	$MRG/Option.text = option_text
 
 func highlight():
@@ -27,4 +26,3 @@ func _on_mouse_exited():
 
 func _on_button_pressed():
 	get_parent().get_parent().option_confirmed.emit(self)
-	pass # Replace with function body.
